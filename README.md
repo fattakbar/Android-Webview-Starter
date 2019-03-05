@@ -9,7 +9,7 @@ Features :
 1. Splash Screen
 2. Javascript Interface
 3. Function Callback
-4. Send Notification (New)
+4. Create Notification (New)
 5. Back Press Confirmation
 
 ![alt text](https://raw.githubusercontent.com/adyoi/Android-Webview-Starter/master/screenshot/image1.jpeg)
