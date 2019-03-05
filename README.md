@@ -1,4 +1,8 @@
 # Android Webview Starter
+[![Build Status](https://travis-ci.com/adyoi/Android-Webview-Starter.svg?branch=master)](https://travis-ci.com/adyoi/Android-Webview-Starter)
+[![Coverage Status](https://coveralls.io/repos/github/adyoi/Android-Webview-Starter/badge.svg)](https://coveralls.io/github/adyoi/Android-Webview-Starter)
+![GitHub issues](https://img.shields.io/github/issues/adyoi/Android-Webview-Starter.svg)
+![GitHub All Releases](https://img.shields.io/github/downloads/adyoi/Android-Webview-Starter/total.svg)
 
 Android Webview Starter v 1.1
 <br> Created by Adi Apriyanto
