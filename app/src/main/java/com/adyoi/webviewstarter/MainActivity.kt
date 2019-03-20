@@ -79,14 +79,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createNotificationChannel(notificationId: Int, notificationTitle: String, notificationText: String) {
-        val intent = Intent(this, SplashScreenActivity::class.java).apply {
-            var flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        val channel_id = "ANDROID_WEBVIEW_STARTER"
+        val channel_name = "Notification Default"
+        val channel_description = ""
+        val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(channel_id, channel_name, importance)
+                channel.description = channel_description
+            val notificationManager = getSystemService(NotificationManager::class.java)
+            notificationManager.createNotificationChannel(channel)
         }
         val notificationManager = NotificationManagerCompat.from(this)
-        val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
         val builder = NotificationCompat
-            .Builder(this, "CHANNEL_ID")
-            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .Builder(this, channel_id)
+            .setSmallIcon(R.drawable.ic_launcher)
             .setContentTitle(notificationTitle)
             .setContentText(notificationText)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
